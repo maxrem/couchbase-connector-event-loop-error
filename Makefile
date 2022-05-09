@@ -1,6 +1,6 @@
 all: docker-up
 
-init: docker-up wait-couchbase init-couchbase
+init: docker-up wait-couchbase init-couchbase assembly
 
 .PHONY: all init docker-up wait-couchbase init-couchbase
 
@@ -13,6 +13,8 @@ wait-couchbase:
 init-couchbase:
 	docker-compose exec -T couchbase bash /opt/configure-couchbase/init.sh
 
-run:
+assembly:
 	sbt assembly
+
+run:
 	docker-compose exec --user local spark-worker /spark/bin/spark-submit --class CouchbaseUpsert /opt/target/scala-2.12/couchbase-upsert-assembly-0.0.1.jar
