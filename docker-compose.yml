@@ -1,0 +1,55 @@
+services:
+  spark-master:
+    build: docker/sparkmaster
+    environment:
+      - INIT_DAEMON_STEP=setup_spark
+      - SPARK_MASTER_HOST=0.0.0.0
+    labels:
+      - traefik.http.routers.core-spark-master.rule=Host(`spark-master.localhost`)
+      - traefik.http.services.spark-master.loadbalancer.server.port=8080
+      - traefik.docker.network=traefik_web
+      - traefik.enable=true
+    networks:
+      - traefik_web
+      - default
+
+  spark-worker:
+    build: docker/sparkworker
+    environment:
+      - "SPARK_MASTER=spark://spark-master:7077"
+    volumes:
+      - ./data:/opt/data
+      - ./target/:/opt/target
+    labels:
+      - traefik.http.routers.spark-worker.rule=Host(`spark-worker.localhost`)
+      - traefik.http.services.spark-worker.loadbalancer.server.port=8081
+      - traefik.docker.network=traefik_web
+      - traefik.enable=true
+    depends_on:
+      - spark-master
+    links:
+      - couchbase
+    networks:
+      - traefik_web
+      - default
+
+  couchbase:
+    image: couchbase:community-7.1.0
+    volumes:
+      - couchbase:/opt/couchbase/var
+      - ./docker/couchbase:/opt/configure-couchbase:ro
+    labels:
+      - traefik.http.routers.spark-cb.rule=Host(`spark-cb.localhost`)
+      - traefik.http.services.spark-cb.loadbalancer.server.port=8091
+      - traefik.docker.network=traefik_web
+      - traefik.enable=true
+    networks:
+      - traefik_web
+      - default
+
+volumes:
+  couchbase:
+
+networks:
+  traefik_web:
+    external: true
