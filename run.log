@@ -1,0 +1,233 @@
+docker-compose exec --user local spark-worker /spark/bin/spark-submit --class CouchbaseUpsert /opt/target/scala-2.12/couchbase-upsert-assembly-0.0.1.jar
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+22/05/18 07:34:21 INFO SparkContext: Running Spark version 3.2.0
+22/05/18 07:34:21 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+22/05/18 07:34:21 INFO ResourceUtils: ==============================================================
+22/05/18 07:34:21 INFO ResourceUtils: No custom resources configured for spark.driver.
+22/05/18 07:34:21 INFO ResourceUtils: ==============================================================
+22/05/18 07:34:21 INFO SparkContext: Submitted application: Couchbase upsert
+22/05/18 07:34:21 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+22/05/18 07:34:21 INFO ResourceProfile: Limiting resource is cpu
+22/05/18 07:34:21 INFO ResourceProfileManager: Added ResourceProfile id: 0
+22/05/18 07:34:21 INFO SecurityManager: Changing view acls to: local
+22/05/18 07:34:21 INFO SecurityManager: Changing modify acls to: local
+22/05/18 07:34:21 INFO SecurityManager: Changing view acls groups to: 
+22/05/18 07:34:21 INFO SecurityManager: Changing modify acls groups to: 
+22/05/18 07:34:21 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(local); groups with view permissions: Set(); users  with modify permissions: Set(local); groups with modify permissions: Set()
+22/05/18 07:34:21 INFO Utils: Successfully started service 'sparkDriver' on port 42077.
+22/05/18 07:34:21 INFO SparkEnv: Registering MapOutputTracker
+22/05/18 07:34:21 INFO SparkEnv: Registering BlockManagerMaster
+22/05/18 07:34:22 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+22/05/18 07:34:22 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+22/05/18 07:34:22 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+22/05/18 07:34:22 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-28769a3d-d530-4fdc-be8b-7a5d79ef373c
+22/05/18 07:34:22 INFO MemoryStore: MemoryStore started with capacity 366.3 MiB
+22/05/18 07:34:22 INFO SparkEnv: Registering OutputCommitCoordinator
+22/05/18 07:34:22 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+22/05/18 07:34:22 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://43065b1e2cb9:4040
+22/05/18 07:34:22 INFO SparkContext: Added JAR file:/opt/target/scala-2.12/couchbase-upsert-assembly-0.0.1.jar at spark://43065b1e2cb9:42077/jars/couchbase-upsert-assembly-0.0.1.jar with timestamp 1652859261495
+22/05/18 07:34:22 INFO Executor: Starting executor ID driver on host 43065b1e2cb9
+22/05/18 07:34:22 INFO Executor: Fetching spark://43065b1e2cb9:42077/jars/couchbase-upsert-assembly-0.0.1.jar with timestamp 1652859261495
+22/05/18 07:34:22 INFO TransportClientFactory: Successfully created connection to 43065b1e2cb9/172.30.0.4:42077 after 21 ms (0 ms spent in bootstraps)
+22/05/18 07:34:22 INFO Utils: Fetching spark://43065b1e2cb9:42077/jars/couchbase-upsert-assembly-0.0.1.jar to /tmp/spark-84b86fe4-ce07-4ced-8fbd-cf8e3b0e85f3/userFiles-89d2acec-fe4f-4674-8fcf-845887fb23f2/fetchFileTemp6122946863619007830.tmp
+22/05/18 07:34:22 INFO Executor: Adding file:/tmp/spark-84b86fe4-ce07-4ced-8fbd-cf8e3b0e85f3/userFiles-89d2acec-fe4f-4674-8fcf-845887fb23f2/couchbase-upsert-assembly-0.0.1.jar to class loader
+22/05/18 07:34:22 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 36805.
+22/05/18 07:34:22 INFO NettyBlockTransferService: Server created on 43065b1e2cb9:36805
+22/05/18 07:34:22 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+22/05/18 07:34:22 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 43065b1e2cb9, 36805, None)
+22/05/18 07:34:22 INFO BlockManagerMasterEndpoint: Registering block manager 43065b1e2cb9:36805 with 366.3 MiB RAM, BlockManagerId(driver, 43065b1e2cb9, 36805, None)
+22/05/18 07:34:22 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 43065b1e2cb9, 36805, None)
+22/05/18 07:34:22 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 43065b1e2cb9, 36805, None)
+22/05/18 07:34:23 INFO SparkContext: Starting job: collect at CouchbaseUpsert.scala:32
+22/05/18 07:34:23 INFO DAGScheduler: Got job 0 (collect at CouchbaseUpsert.scala:32) with 12 output partitions
+22/05/18 07:34:23 INFO DAGScheduler: Final stage: ResultStage 0 (collect at CouchbaseUpsert.scala:32)
+22/05/18 07:34:23 INFO DAGScheduler: Parents of final stage: List()
+22/05/18 07:34:23 INFO DAGScheduler: Missing parents: List()
+22/05/18 07:34:23 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[2] at mapPartitions at RDDFunctions.scala:48), which has no missing parents
+22/05/18 07:34:23 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 5.7 KiB, free 366.3 MiB)
+22/05/18 07:34:23 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 3.2 KiB, free 366.3 MiB)
+22/05/18 07:34:23 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 43065b1e2cb9:36805 (size: 3.2 KiB, free: 366.3 MiB)
+22/05/18 07:34:23 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1427
+22/05/18 07:34:23 INFO DAGScheduler: Submitting 12 missing tasks from ResultStage 0 (MapPartitionsRDD[2] at mapPartitions at RDDFunctions.scala:48) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11))
+22/05/18 07:34:23 INFO TaskSchedulerImpl: Adding task set 0.0 with 12 tasks resource profile 0
+22/05/18 07:34:23 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (43065b1e2cb9, executor driver, partition 0, PROCESS_LOCAL, 4475 bytes) taskResourceAssignments Map()
+22/05/18 07:34:23 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1) (43065b1e2cb9, executor driver, partition 1, PROCESS_LOCAL, 4475 bytes) taskResourceAssignments Map()
+22/05/18 07:34:23 INFO TaskSetManager: Starting task 2.0 in stage 0.0 (TID 2) (43065b1e2cb9, executor driver, partition 2, PROCESS_LOCAL, 4475 bytes) taskResourceAssignments Map()
+22/05/18 07:34:23 INFO TaskSetManager: Starting task 3.0 in stage 0.0 (TID 3) (43065b1e2cb9, executor driver, partition 3, PROCESS_LOCAL, 4475 bytes) taskResourceAssignments Map()
+22/05/18 07:34:23 INFO TaskSetManager: Starting task 4.0 in stage 0.0 (TID 4) (43065b1e2cb9, executor driver, partition 4, PROCESS_LOCAL, 4475 bytes) taskResourceAssignments Map()
+22/05/18 07:34:23 INFO TaskSetManager: Starting task 5.0 in stage 0.0 (TID 5) (43065b1e2cb9, executor driver, partition 5, PROCESS_LOCAL, 4670 bytes) taskResourceAssignments Map()
+22/05/18 07:34:23 INFO TaskSetManager: Starting task 6.0 in stage 0.0 (TID 6) (43065b1e2cb9, executor driver, partition 6, PROCESS_LOCAL, 4475 bytes) taskResourceAssignments Map()
+22/05/18 07:34:23 INFO TaskSetManager: Starting task 7.0 in stage 0.0 (TID 7) (43065b1e2cb9, executor driver, partition 7, PROCESS_LOCAL, 4475 bytes) taskResourceAssignments Map()
+22/05/18 07:34:23 INFO TaskSetManager: Starting task 8.0 in stage 0.0 (TID 8) (43065b1e2cb9, executor driver, partition 8, PROCESS_LOCAL, 4475 bytes) taskResourceAssignments Map()
+22/05/18 07:34:23 INFO TaskSetManager: Starting task 9.0 in stage 0.0 (TID 9) (43065b1e2cb9, executor driver, partition 9, PROCESS_LOCAL, 4475 bytes) taskResourceAssignments Map()
+22/05/18 07:34:23 INFO TaskSetManager: Starting task 10.0 in stage 0.0 (TID 10) (43065b1e2cb9, executor driver, partition 10, PROCESS_LOCAL, 4475 bytes) taskResourceAssignments Map()
+22/05/18 07:34:23 INFO TaskSetManager: Starting task 11.0 in stage 0.0 (TID 11) (43065b1e2cb9, executor driver, partition 11, PROCESS_LOCAL, 4670 bytes) taskResourceAssignments Map()
+22/05/18 07:34:23 INFO Executor: Running task 2.0 in stage 0.0 (TID 2)
+22/05/18 07:34:23 INFO Executor: Running task 11.0 in stage 0.0 (TID 11)
+22/05/18 07:34:23 INFO Executor: Running task 5.0 in stage 0.0 (TID 5)
+22/05/18 07:34:23 INFO Executor: Running task 6.0 in stage 0.0 (TID 6)
+22/05/18 07:34:23 INFO Executor: Running task 7.0 in stage 0.0 (TID 7)
+22/05/18 07:34:23 INFO Executor: Running task 8.0 in stage 0.0 (TID 8)
+22/05/18 07:34:23 INFO Executor: Running task 3.0 in stage 0.0 (TID 3)
+22/05/18 07:34:23 INFO Executor: Running task 10.0 in stage 0.0 (TID 10)
+22/05/18 07:34:23 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+22/05/18 07:34:23 INFO Executor: Running task 1.0 in stage 0.0 (TID 1)
+22/05/18 07:34:23 INFO Executor: Running task 4.0 in stage 0.0 (TID 4)
+22/05/18 07:34:23 INFO Executor: Running task 9.0 in stage 0.0 (TID 9)
+22/05/18 07:34:24 INFO Executor: Finished task 6.0 in stage 0.0 (TID 6). 908 bytes result sent to driver
+22/05/18 07:34:24 INFO Executor: Finished task 10.0 in stage 0.0 (TID 10). 908 bytes result sent to driver
+22/05/18 07:34:24 INFO Executor: Finished task 9.0 in stage 0.0 (TID 9). 908 bytes result sent to driver
+22/05/18 07:34:24 INFO Executor: Finished task 4.0 in stage 0.0 (TID 4). 908 bytes result sent to driver
+22/05/18 07:34:24 INFO Executor: Finished task 1.0 in stage 0.0 (TID 1). 951 bytes result sent to driver
+22/05/18 07:34:24 INFO Executor: Finished task 8.0 in stage 0.0 (TID 8). 908 bytes result sent to driver
+22/05/18 07:34:24 INFO Executor: Finished task 7.0 in stage 0.0 (TID 7). 908 bytes result sent to driver
+22/05/18 07:34:24 INFO Executor: Finished task 2.0 in stage 0.0 (TID 2). 908 bytes result sent to driver
+22/05/18 07:34:24 INFO Executor: Finished task 3.0 in stage 0.0 (TID 3). 908 bytes result sent to driver
+22/05/18 07:34:24 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 908 bytes result sent to driver
+22/05/18 07:34:24 INFO TaskSetManager: Finished task 9.0 in stage 0.0 (TID 9) in 415 ms on 43065b1e2cb9 (executor driver) (1/12)
+22/05/18 07:34:24 INFO TaskSetManager: Finished task 10.0 in stage 0.0 (TID 10) in 416 ms on 43065b1e2cb9 (executor driver) (2/12)
+22/05/18 07:34:24 INFO TaskSetManager: Finished task 8.0 in stage 0.0 (TID 8) in 418 ms on 43065b1e2cb9 (executor driver) (3/12)
+22/05/18 07:34:24 INFO TaskSetManager: Finished task 4.0 in stage 0.0 (TID 4) in 421 ms on 43065b1e2cb9 (executor driver) (4/12)
+22/05/18 07:34:24 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 424 ms on 43065b1e2cb9 (executor driver) (5/12)
+22/05/18 07:34:24 INFO TaskSetManager: Finished task 7.0 in stage 0.0 (TID 7) in 419 ms on 43065b1e2cb9 (executor driver) (6/12)
+22/05/18 07:34:24 INFO TaskSetManager: Finished task 6.0 in stage 0.0 (TID 6) in 421 ms on 43065b1e2cb9 (executor driver) (7/12)
+22/05/18 07:34:24 INFO TaskSetManager: Finished task 2.0 in stage 0.0 (TID 2) in 425 ms on 43065b1e2cb9 (executor driver) (8/12)
+22/05/18 07:34:24 INFO TaskSetManager: Finished task 3.0 in stage 0.0 (TID 3) in 424 ms on 43065b1e2cb9 (executor driver) (9/12)
+22/05/18 07:34:24 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 450 ms on 43065b1e2cb9 (executor driver) (10/12)
+22/05/18 07:34:24 INFO core: [com.couchbase.core][DnsSrvLookupFailedEvent][64ms] DNS SRV lookup failed (name not found), trying to bootstrap from given hostname directly.
+22/05/18 07:34:24 INFO core: [com.couchbase.core][CoreCreatedEvent] {"clientVersion":null,"clientGitHash":null,"coreVersion":null,"coreGitHash":null,"userAgent":"couchbase-scala/0.0.0 (Linux 5.13.0-40-generic amd64; OpenJDK 64-Bit Server VM 1.8.0_275-b01)","maxNumRequestsInRetry":32768,"ioEnvironment":{"nativeIoEnabled":true,"eventLoopThreadCount":6,"eventLoopGroups":["NioEventLoopGroup"]},"ioConfig":{"captureTraffic":[],"mutationTokensEnabled":true,"networkResolution":"auto","dnsSrvEnabled":true,"tcpKeepAlivesEnabled":true,"tcpKeepAliveTimeMs":60000,"configPollIntervalMs":2500,"kvCircuitBreakerConfig":"disabled","queryCircuitBreakerConfig":"disabled","viewCircuitBreakerConfig":"disabled","searchCircuitBreakerConfig":"disabled","analyticsCircuitBreakerConfig":"disabled","managerCircuitBreakerConfig":"disabled","eventingCircuitBreakerConfig":"disabled","numKvConnections":1,"maxHttpConnections":12,"idleHttpConnectionTimeoutMs":4500,"configIdleRedialTimeoutMs":300000,"memcachedHashingStrategy":"StandardMemcachedHashingStrategy"},"compressionConfig":{"enabled":true,"minRatio":0.83,"minSize":32},"securityConfig":{"tlsEnabled":false,"nativeTlsEnabled":true,"hostnameVerificationEnabled":true,"hasTrustCertificates":false,"trustManagerFactory":null,"ciphers":[]},"timeoutConfig":{"kvMs":2500,"kvDurableMs":10000,"managementMs":75000,"queryMs":75000,"viewMs":75000,"searchMs":75000,"analyticsMs":75000,"connectMs":10000,"disconnectMs":10000,"eventingMs":75000},"loggerConfig":{"customLogger":null,"fallbackToConsole":false,"consoleLogLevel":{"name":"INFO","resourceBundleName":"sun.util.logging.resources.logging","localizedName":"INFO"},"disableSlf4j":false,"loggerName":"CouchbaseLogger","diagnosticContextEnabled":false},"orphanReporterConfig":{"emitIntervalMs":10000,"sampleSize":10,"queueLength":1024,"enabled":true},"thresholdLoggingTracerConfig":{"enabled":true,"emitIntervalMs":10000,"sampleSize":10,"queueLength":1024,"kvThresholdMs":500,"queryThresholdMs":1000,"searchThresholdMs":1000,"analyticsThresholdMs":1000,"viewThresholdMs":1000},"loggingMeterConfig":{"enabled":true,"emitIntervalMs":600000},"retryStrategy":"BestEffortRetryStrategy","requestTracer":"ThresholdLoggingTracer","meter":"LoggingMeter","numRequestCallbacks":0} {"coreId":"0xd4d3725600000001","seedNodes":[{"address":"couchbase"}]}
+22/05/18 07:34:24 INFO node: [com.couchbase.node][NodeConnectedEvent] Node connected {"coreId":"0xd4d3725600000001","managerPort":"8091","remote":"couchbase"}
+22/05/18 07:34:25 INFO Executor: Finished task 5.0 in stage 0.0 (TID 5). 1271 bytes result sent to driver
+22/05/18 07:34:25 INFO Executor: Finished task 11.0 in stage 0.0 (TID 11). 1271 bytes result sent to driver
+22/05/18 07:34:25 INFO TaskSetManager: Finished task 5.0 in stage 0.0 (TID 5) in 1631 ms on 43065b1e2cb9 (executor driver) (11/12)
+22/05/18 07:34:25 INFO TaskSetManager: Finished task 11.0 in stage 0.0 (TID 11) in 1628 ms on 43065b1e2cb9 (executor driver) (12/12)
+22/05/18 07:34:25 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+22/05/18 07:34:25 INFO DAGScheduler: ResultStage 0 (collect at CouchbaseUpsert.scala:32) finished in 1.788 s
+22/05/18 07:34:25 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+22/05/18 07:34:25 INFO TaskSchedulerImpl: Killing all running tasks in stage 0: Stage finished
+22/05/18 07:34:25 INFO DAGScheduler: Job 0 finished: collect at CouchbaseUpsert.scala:32, took 1.824171 s
+MutationResult(1652859265241317376,Some(mt{vbID=988, vbUUID=142986576295124, seqno=4, bucket=item}))
+MutationResult(1652859265241382912,Some(mt{vbID=725, vbUUID=147165444014960, seqno=4, bucket=item}))
+22/05/18 07:34:25 INFO SparkContext: Invoking stop() from shutdown hook
+22/05/18 07:34:25 INFO SparkUI: Stopped Spark web UI at http://43065b1e2cb9:4040
+22/05/18 07:34:25 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+22/05/18 07:34:25 INFO core: [com.couchbase.core][BucketOpenedEvent][75ms] Opened bucket "item" {"coreId":"0xd4d3725600000001"}
+22/05/18 07:34:25 INFO core: [com.couchbase.core][BucketOpenedEvent][79ms] Opened bucket "item" {"coreId":"0xd4d3725600000001"}
+22/05/18 07:34:25 INFO MemoryStore: MemoryStore cleared
+22/05/18 07:34:25 INFO core: [com.couchbase.core][BucketClosedEvent][1398us] Closed bucket "item" {"coreId":"0xd4d3725600000001"}
+22/05/18 07:34:25 INFO node: [com.couchbase.node][NodeDisconnectedEvent][1096us] Node disconnected {"coreId":"0xd4d3725600000001","managerPort":"8091","remote":"couchbase"}
+22/05/18 07:34:25 INFO BlockManager: BlockManager stopped
+22/05/18 07:34:25 INFO core: [com.couchbase.core][ShutdownCompletedEvent][18ms] Completed shutdown and closed all open buckets {"coreId":"0xd4d3725600000001"}
+22/05/18 07:34:25 INFO BlockManagerMaster: BlockManagerMaster stopped
+22/05/18 07:34:25 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+22/05/18 07:34:25 INFO SparkContext: Successfully stopped SparkContext
+22/05/18 07:34:25 INFO ShutdownHookManager: Shutdown hook called
+22/05/18 07:34:25 INFO ShutdownHookManager: Deleting directory /tmp/spark-ce75cde7-0856-436f-b636-540a6b2f361a
+22/05/18 07:34:25 WARN AbstractChannel: Force-closing a channel whose registration task was not accepted by an event loop: [id: 0x829dfed9]
+java.util.concurrent.RejectedExecutionException: event executor terminated
+	at com.couchbase.client.core.deps.io.netty.util.concurrent.SingleThreadEventExecutor.reject(SingleThreadEventExecutor.java:923)
+	at com.couchbase.client.core.deps.io.netty.util.concurrent.SingleThreadEventExecutor.offerTask(SingleThreadEventExecutor.java:350)
+	at com.couchbase.client.core.deps.io.netty.util.concurrent.SingleThreadEventExecutor.addTask(SingleThreadEventExecutor.java:343)
+	at com.couchbase.client.core.deps.io.netty.util.concurrent.SingleThreadEventExecutor.execute(SingleThreadEventExecutor.java:825)
+	at com.couchbase.client.core.deps.io.netty.util.concurrent.SingleThreadEventExecutor.execute(SingleThreadEventExecutor.java:815)
+	at com.couchbase.client.core.deps.io.netty.channel.AbstractChannel$AbstractUnsafe.register(AbstractChannel.java:483)
+	at com.couchbase.client.core.deps.io.netty.channel.SingleThreadEventLoop.register(SingleThreadEventLoop.java:87)
+	at com.couchbase.client.core.deps.io.netty.channel.SingleThreadEventLoop.register(SingleThreadEventLoop.java:81)
+	at com.couchbase.client.core.deps.io.netty.channel.MultithreadEventLoopGroup.register(MultithreadEventLoopGroup.java:86)
+	at com.couchbase.client.core.deps.io.netty.bootstrap.AbstractBootstrap.initAndRegister(AbstractBootstrap.java:323)
+	at com.couchbase.client.core.deps.io.netty.bootstrap.Bootstrap.doResolveAndConnect(Bootstrap.java:155)
+	at com.couchbase.client.core.deps.io.netty.bootstrap.Bootstrap.connect(Bootstrap.java:116)
+	at com.couchbase.client.core.endpoint.BaseEndpoint.lambda$reconnect$1(BaseEndpoint.java:336)
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:44)
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:64)
+	at reactor.core.publisher.FluxRetryWhen.subscribe(FluxRetryWhen.java:77)
+	at reactor.core.publisher.MonoRetryWhen.subscribeOrReturn(MonoRetryWhen.java:46)
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4385)
+	at reactor.core.publisher.Mono.subscribeWith(Mono.java:4515)
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4371)
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4307)
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4279)
+	at com.couchbase.client.core.endpoint.BaseEndpoint.reconnect(BaseEndpoint.java:383)
+	at com.couchbase.client.core.endpoint.BaseEndpoint.connect(BaseEndpoint.java:256)
+	at com.couchbase.client.core.endpoint.BaseEndpoint.notifyChannelInactive(BaseEndpoint.java:523)
+	at com.couchbase.client.core.io.netty.PipelineErrorHandler.channelInactive(PipelineErrorHandler.java:64)
+	at com.couchbase.client.core.deps.io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:262)
+	at com.couchbase.client.core.deps.io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:248)
+	at com.couchbase.client.core.deps.io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:241)
+	at com.couchbase.client.core.io.netty.kv.KeyValueMessageHandler.channelInactive(KeyValueMessageHandler.java:302)
+	at com.couchbase.client.core.deps.io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:262)
+	at com.couchbase.client.core.deps.io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:248)
+	at com.couchbase.client.core.deps.io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:241)
+	at com.couchbase.client.core.deps.io.netty.handler.codec.ByteToMessageDecoder.channelInputClosed(ByteToMessageDecoder.java:389)
+	at com.couchbase.client.core.deps.io.netty.handler.codec.ByteToMessageDecoder.channelInactive(ByteToMessageDecoder.java:354)
+	at com.couchbase.client.core.deps.io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:262)
+	at com.couchbase.client.core.deps.io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:248)
+	at com.couchbase.client.core.deps.io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:241)
+	at com.couchbase.client.core.deps.io.netty.channel.DefaultChannelPipeline$HeadContext.channelInactive(DefaultChannelPipeline.java:1405)
+	at com.couchbase.client.core.deps.io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:262)
+	at com.couchbase.client.core.deps.io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:248)
+	at com.couchbase.client.core.deps.io.netty.channel.DefaultChannelPipeline.fireChannelInactive(DefaultChannelPipeline.java:901)
+	at com.couchbase.client.core.deps.io.netty.channel.AbstractChannel$AbstractUnsafe$8.run(AbstractChannel.java:831)
+	at com.couchbase.client.core.deps.io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:164)
+	at com.couchbase.client.core.deps.io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasksFrom(SingleThreadEventExecutor.java:425)
+	at com.couchbase.client.core.deps.io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:374)
+	at com.couchbase.client.core.deps.io.netty.util.concurrent.SingleThreadEventExecutor.confirmShutdown(SingleThreadEventExecutor.java:760)
+	at com.couchbase.client.core.deps.io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:527)
+	at com.couchbase.client.core.deps.io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at com.couchbase.client.core.deps.io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at com.couchbase.client.core.deps.io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+22/05/18 07:34:25 INFO ShutdownHookManager: Deleting directory /tmp/spark-84b86fe4-ce07-4ced-8fbd-cf8e3b0e85f3
+22/05/18 07:34:25 ERROR rejectedExecution: Failed to submit a listener notification task. Event loop shut down?
+java.util.concurrent.RejectedExecutionException: event executor terminated
+	at com.couchbase.client.core.deps.io.netty.util.concurrent.SingleThreadEventExecutor.reject(SingleThreadEventExecutor.java:923)
+	at com.couchbase.client.core.deps.io.netty.util.concurrent.SingleThreadEventExecutor.offerTask(SingleThreadEventExecutor.java:350)
+	at com.couchbase.client.core.deps.io.netty.util.concurrent.SingleThreadEventExecutor.addTask(SingleThreadEventExecutor.java:343)
+	at com.couchbase.client.core.deps.io.netty.util.concurrent.SingleThreadEventExecutor.execute(SingleThreadEventExecutor.java:825)
+	at com.couchbase.client.core.deps.io.netty.util.concurrent.SingleThreadEventExecutor.execute(SingleThreadEventExecutor.java:815)
+	at com.couchbase.client.core.deps.io.netty.util.concurrent.DefaultPromise.safeExecute(DefaultPromise.java:841)
+	at com.couchbase.client.core.deps.io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:499)
+	at com.couchbase.client.core.deps.io.netty.util.concurrent.DefaultPromise.addListener(DefaultPromise.java:184)
+	at com.couchbase.client.core.deps.io.netty.channel.DefaultChannelPromise.addListener(DefaultChannelPromise.java:95)
+	at com.couchbase.client.core.deps.io.netty.channel.DefaultChannelPromise.addListener(DefaultChannelPromise.java:30)
+	at com.couchbase.client.core.endpoint.BaseEndpoint.channelFutureIntoMono(BaseEndpoint.java:686)
+	at com.couchbase.client.core.endpoint.BaseEndpoint.lambda$reconnect$1(BaseEndpoint.java:336)
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:44)
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:64)
+	at reactor.core.publisher.FluxRetryWhen.subscribe(FluxRetryWhen.java:77)
+	at reactor.core.publisher.MonoRetryWhen.subscribeOrReturn(MonoRetryWhen.java:46)
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4385)
+	at reactor.core.publisher.Mono.subscribeWith(Mono.java:4515)
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4371)
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4307)
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4279)
+	at com.couchbase.client.core.endpoint.BaseEndpoint.reconnect(BaseEndpoint.java:383)
+	at com.couchbase.client.core.endpoint.BaseEndpoint.connect(BaseEndpoint.java:256)
+	at com.couchbase.client.core.endpoint.BaseEndpoint.notifyChannelInactive(BaseEndpoint.java:523)
+	at com.couchbase.client.core.io.netty.PipelineErrorHandler.channelInactive(PipelineErrorHandler.java:64)
+	at com.couchbase.client.core.deps.io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:262)
+	at com.couchbase.client.core.deps.io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:248)
+	at com.couchbase.client.core.deps.io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:241)
+	at com.couchbase.client.core.io.netty.kv.KeyValueMessageHandler.channelInactive(KeyValueMessageHandler.java:302)
+	at com.couchbase.client.core.deps.io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:262)
+	at com.couchbase.client.core.deps.io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:248)
+	at com.couchbase.client.core.deps.io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:241)
+	at com.couchbase.client.core.deps.io.netty.handler.codec.ByteToMessageDecoder.channelInputClosed(ByteToMessageDecoder.java:389)
+	at com.couchbase.client.core.deps.io.netty.handler.codec.ByteToMessageDecoder.channelInactive(ByteToMessageDecoder.java:354)
+	at com.couchbase.client.core.deps.io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:262)
+	at com.couchbase.client.core.deps.io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:248)
+	at com.couchbase.client.core.deps.io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:241)
+	at com.couchbase.client.core.deps.io.netty.channel.DefaultChannelPipeline$HeadContext.channelInactive(DefaultChannelPipeline.java:1405)
+	at com.couchbase.client.core.deps.io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:262)
+	at com.couchbase.client.core.deps.io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:248)
+	at com.couchbase.client.core.deps.io.netty.channel.DefaultChannelPipeline.fireChannelInactive(DefaultChannelPipeline.java:901)
+	at com.couchbase.client.core.deps.io.netty.channel.AbstractChannel$AbstractUnsafe$8.run(AbstractChannel.java:831)
+	at com.couchbase.client.core.deps.io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:164)
+	at com.couchbase.client.core.deps.io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasksFrom(SingleThreadEventExecutor.java:425)
+	at com.couchbase.client.core.deps.io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:374)
+	at com.couchbase.client.core.deps.io.netty.util.concurrent.SingleThreadEventExecutor.confirmShutdown(SingleThreadEventExecutor.java:760)
+	at com.couchbase.client.core.deps.io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:527)
+	at com.couchbase.client.core.deps.io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at com.couchbase.client.core.deps.io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at com.couchbase.client.core.deps.io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
